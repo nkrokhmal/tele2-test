@@ -1,0 +1,10 @@
+pandas
+gensim
+nltk
+numpy
+bokeh
+pymystem3
+pymorphy2
+sklearn
+scipy
+tqdm
