@@ -8,7 +8,7 @@
 
 Решение задачи по кластеризации находится в папке research в jupyter notebook. 
 
-Для решения данной задачи требуется скачать модель ![image](https://drive.google.com/uc?export=view&id=<FILE_ID>), распаковать его и поместить его в папку data.
+Для решения данной задачи требуется скачать ![модель](https://drive.google.com/uc?export=view&id=<FILE_ID>), распаковать его и поместить его в папку data.
 
 Кроме этого необходимо установить все requirements из requirements.txt.
 
