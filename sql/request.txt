@@ -1,0 +1,40 @@
+SELECT
+  created_at,
+  email
+FROM
+  (
+    SELECT
+      *,
+      row_number() over (
+        partition by email
+        order by
+          created_at
+      ) as row_number
+    FROM
+      (
+        SELECT
+          DATETIME(product_interest, 'unixepoch') AS created_at,
+          email
+        FROM
+          questionnare_table
+        WHERE
+          product_interest is not NULL
+        UNION ALL
+        SELECT
+          email,
+          created_at
+        FROM
+          conversation_history
+        WHERE
+          id in (
+            SELECT
+              conversation_id
+            from
+              conversation_tag
+            WHERE
+              tag = "product-interest"
+          )
+      )
+  )
+WHERE
+  row_number = 2;
